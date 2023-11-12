@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 
-/home/bmc/proxmoxbmc/.env/bin/pbmcd --foreground --pidfile /tmp/pbmcd.pid 
+exec /pbmc/bin/pbmcd --pidfile /tmp/pbmcd.pid --configdir /config --foreground
+
+
 
 

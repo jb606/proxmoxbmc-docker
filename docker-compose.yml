@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  pbmc:
+    image: ghcr.io/jb606/proxmoxbmc-docker:2
+    restart: unless-stopped
+    networks:
+      - pbmc-net
+    volumes:
+      - pbmc_config:/config
+    ports:
+      - 10000-10128:10000-10128/udp
+
+volumes:
+  pbmc_config:
+networks:
+  pbmc-net:
